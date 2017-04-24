@@ -1,2 +1,5 @@
-.idea
+.*
+!.git*
 *.iml
+build
+node_modules

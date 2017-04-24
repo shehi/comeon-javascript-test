@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - .:/home/comeon
+    working_dir: /home/comeon
+  node:
+    build:
+        context: ./
+    image: node
+    volumes:
+      - .:/home/comeon
+    working_dir: /home/comeon
+    links:
+      - nginx
+    environment:
+      WORKDIR: "/home/comeon"
+    stdin_open: true
+    tty: true
