@@ -2,15 +2,18 @@
 <html>
 <head>
     <title>ComeOn Javascript Test</title>
+    <meta charset="utf-8">
+
     <link href="images/favicon.ico" rel="shortcut icon">
 
     <link rel="stylesheet" type="text/css" href="stylesheets/semantic.css"/>
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css"/>
 
-    <script src="lib/jquery-2.1.3.min.js"></script>
-    <script src="lib/jquery.mockjax-1.6.1.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/jquery.mockjax.min.js"></script>
     <script src="lib/comeon.game-1.0.min.js"></script>
     <script src="mock/mock-api.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
 <div class="ui one column center aligned page grid">
@@ -21,7 +24,7 @@
 <div class="main container">
     <div class="login" style="display:block;">
         <div class="ui grid centered">
-            <form>
+            <form method=POST" action="/login">
                 <div class="fields">
                     <div class="required field">
                         <div class="ui icon input">
@@ -62,9 +65,9 @@
                     <!-- end player item template -->
 
                 </div>
-                <div class="logout ui left floated secondary button inverted">
-					<i class="left chevron icon"></i>Log Out
-				</div>
+                <div class="logout ui left floated secondary button inverted" data-player-id="">
+                    <i class="left chevron icon"></i>Log Out
+                </div>
             </div>
             <div class="four wide column">
                 <div class="search ui small icon input ">
@@ -80,23 +83,22 @@
                 <div class="ui relaxed divided game items links">
 
                     <!-- game item template -->
-                    <div class="game item">
-                        <div class="ui small image">
-                            <img src="" alt="game-icon">
-                        </div>
-                        <div class="content">
-                            <div class="header"><b class="name"></b></div>
-                            <div class="description">
-                            </div>
-                            <div class="extra">
-                                <div class="play ui right floated secondary button inverted">
-                                    Play
-                                    <i class="right chevron icon"></i>
-                                </div>
+                    <!--<div class="game item">-->
+                        <!--<div class="ui small image">-->
+                            <!--<img src="" alt="game-icon">-->
+                        <!--</div>-->
+                        <!--<div class="content">-->
+                            <!--<div class="header"><b class="name"></b></div>-->
+                            <!--<div class="description"></div>-->
+                            <!--<div class="extra">-->
+                                <!--<div class="play ui right floated secondary button inverted">-->
+                                    <!--Play-->
+                                    <!--<i class="right chevron icon"></i>-->
+                                <!--</div>-->
 
-                            </div>
-                        </div>
-                    </div>
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <!-- end game item template -->
 
                 </div>
@@ -107,11 +109,11 @@
                 <div class="ui selection animated list category items">
 
                     <!-- category item template -->
-                    <div class="category item">
-                        <div class="content">
-                            <div class="header"></div>
-                        </div>
-                    </div>
+                    <!--<div class="category item">-->
+                        <!--<div class="content">-->
+                            <!--<div class="header"></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <!-- end category item template -->
 
                 </div>

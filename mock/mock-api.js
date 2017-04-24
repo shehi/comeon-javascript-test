@@ -79,9 +79,9 @@
         url: '/login',
         contentType: 'application/json',
         response: function (settings) {
+            settings.data = JSON.parse(settings.data);
             var username = settings.data.username,
                 password = settings.data.password;
-
             if (username in players && players[username].password === password) {
                 this.responseText = {
                     status: 'success',
@@ -107,15 +107,16 @@
         contentType: 'application/json',
         responseText: categories
     });
-    
+
     $.mockjax({
         url: '/logout',
         contentType: 'application/json',
         response: function (settings) {
-            var username = settings.data.username;          
+            settings.data = JSON.parse(settings.data);
+            var username = settings.data.username;
             if (username in players) {
                 this.responseText = {
-                    status: 'success'  
+                    status: 'success'
                 };
             } else {
                 this.responseText = {
