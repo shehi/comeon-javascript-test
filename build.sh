@@ -22,7 +22,7 @@ docker exec ${COMPOSE_PROJECT_NAME}node_1 bash -c "
 
 #stty cols 239 rows 61;
 #docker-compose down;
-docker container prune -f;
-docker network prune -f;
-docker volume prune -f;
-docker image prune -f;
+#docker container prune -f;
+#docker network prune -f;
+#docker volume prune -f;
+#docker image prune -f;
