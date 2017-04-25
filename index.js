@@ -7,15 +7,13 @@ jQuery(document).ready(function () {
     jQuery('.login form').submit(function (event) {
         event.preventDefault();
         var username = jQuery(this).find('[name="username"]').val();
-        var password = jQuery(this).find('[name="password"]').val();
-        var data = JSON.stringify({
-            username: username,
-            password: password
-        });
         jQuery.ajax({
             url: '/login',
             method: 'POST',
-            data: data,
+            data: {
+                username: jQuery(this).find('[name="username"]').val(),
+                password: jQuery(this).find('[name="password"]').val()
+            },
             success: function (data) {
                 if (data.status === 'success') {
                     jQuery('.logout').attr('data-player-id', username);
@@ -96,13 +94,12 @@ jQuery(document).ready(function () {
 
     jQuery('.logout').click(function (event) {
         event.preventDefault();
-        var data = JSON.stringify({
-            username: jQuery(this).attr('data-player-id')
-        });
         jQuery.ajax({
             url: '/logout',
             method: 'POST',
-            data: data,
+            data: {
+                username: jQuery(this).attr('data-player-id')
+            },
             success: function (data) {
                 console.log(data);
                 if (data.status === 'success') {
